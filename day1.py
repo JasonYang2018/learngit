@@ -1,6 +1,7 @@
 voted={}
+
 def check_voter():
-    name = input("Please input your name!")
+    name = input("Please input your name for voting!")
     if voted.get(name):
         print ("kick them out")
         check_voter()
