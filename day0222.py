@@ -46,6 +46,7 @@ def findMinAndMax(L):
             max=x
     return min,max
 '''
+
 def fibonacci(n):
     if n == 0:
         return 0
@@ -56,6 +57,26 @@ def fibonacci(n):
         num = fibonacci(n-1)+fibonacci(n-2)
         return num
     return None
-
-for n in range(6):
+'''
+for n in range(100):
    print (fibonacci(n))
+
+'''
+
+def fib(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    a=1
+    b=0
+    ret=0
+    for n in range(0,n-1):
+        ret = a + b
+        b = a
+        a = ret
+    return ret
+
+
+for n in range(100):
+   print        (fib(n))
