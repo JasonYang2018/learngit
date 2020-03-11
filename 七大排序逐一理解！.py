@@ -7,10 +7,27 @@
 def bubb_sort(list):
     n = len(list)
     for i in range(0,n):
-        for j in range(0,n-1):
-            if list[j]>list[j+1]:
+        for j in range(0,n-1-i):
+            if list[j]<list[j+1]:
                 list[j],list[j+1]=list[j+1],list[j]
     return list
 
-list = [56,78,23,12,89,24,5,6,7]
-print (bubb_sort(list))
+array = [56,78,23,12,89,24,5,6,7]
+#print (bubb_sort(list))
+
+#2 快速排序
+def quicksort(array):
+    if len(array) <2:
+        return array
+    else:
+        pivot = array[0]
+        less = []
+        greater = []
+        for i in array[1:]:
+            if i<=pivot:
+                less.append(i)
+            else:
+                greater.append(i)
+    return quicksort(less)+[pivot]+quicksort(greater)
+
+print ('快速排序：', quicksort(array))
